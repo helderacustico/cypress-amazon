@@ -1,0 +1,14 @@
+{
+  "name": "cypress_amazzon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Helder Soares",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^11.2.0"
+  }
+}
