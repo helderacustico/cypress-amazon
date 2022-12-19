@@ -1,20 +1,8 @@
-
+import data from "../pages/data"
 
 describe('deve realizar login', function(){
 
-    const data = {
-
-        meuPrimeiroNome: 'Helder',
-        user: 'helderacustico123@gmail.com',
-        senha: 'Cadeiraboa123',
-        telefone: '5573991364331',
-        cep: '45990292',
-        endereco: 'Rua Egberto Rabelo Pina',
-        numeroEndereco: '444',
-        bairro: 'Redenção'
-
     
-    }
 
     it('case 1', function(){
         
@@ -26,6 +14,7 @@ describe('deve realizar login', function(){
         cy.get('#nav-link-accountList').click()
         
         cy.get('#ap_email').type(data.user)
+    
         cy.get('.a-button-inner > #continue').click()
 
         cy.get('#ap_password').type(data.senha)
@@ -41,6 +30,12 @@ describe('deve realizar login', function(){
         cy.get('div#search div:nth-child(3) > div > div > div > div > div.a-section.a-spacing-small.puis-padding-left-small.puis-padding-right-small > div.a-section.a-spacing-none.a-spacing-top-small.s-title-instructions-style > h2 > a > span')
             .should('be.visible')
             .click()
+        
+        const a = cy.get('[data-asin="B084DWCZY6"] > .sg-col-inner > .s-widget-container > .s-card-container > .a-spacing-base > .a-spacing-small > .s-price-instructions-style > .a-row > :nth-child(1) > .a-price > [aria-hidden="true"] > .a-price-whole').invoke('text')
+
+        cy.log(a)
+
+            /* 
         
         cy.get('#add-to-cart-button').click()
         cy.get('#sc-buy-box-ptc-button > .a-button-inner > .a-button-input').click()
@@ -59,7 +54,7 @@ describe('deve realizar login', function(){
 
         cy.get('#address-ui-widgets-use-as-my-default').click()
 
-        cy.get('#address-ui-widgets-form-submit-button > .a-button-inner > .a-button-input').click()
+        cy.get('#address-ui-widgets-form-submit-button > .a-button-inner > .a-button-input').click() */
         
     })
 
